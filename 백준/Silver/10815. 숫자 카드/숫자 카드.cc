@@ -13,12 +13,12 @@ int main(void)
 
 	int N;
 	cin >> N;
-	int *cardSet = new int[N];
+	vector<int> cardSet(N, 0);
 
 	for (int i = 0; i < N; i++)
 		cin >> cardSet[i];
 
-	sort(cardSet, cardSet + N);
+	sort(cardSet.begin(), cardSet.end());
 
 	int M;
 	cin >> M;
@@ -26,7 +26,7 @@ int main(void)
 	for (int i = 0; i < M; i++)
 	{
 		cin >> card;
-		cout << binary_search(cardSet, cardSet + N, card) << " ";
+		cout << binary_search(cardSet.begin(), cardSet.end(), card) << " ";
 	}
 	return 0;
 }
